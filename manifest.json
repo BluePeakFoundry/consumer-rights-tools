@@ -1,0 +1,51 @@
+{
+  "artifact": "consumer_rights_tools_index",
+  "created_utc": "2026-08-27T07:30:15Z-p3",
+  "public_url": "https://bluepeakfoundry.github.io/consumer-rights-tools/",
+  "included_tools": [
+    "https://bluepeakfoundry.github.io/sepa-direct-debit-refund-draft/",
+    "https://bluepeakfoundry.github.io/rail-delay-compensation/",
+    "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/"
+  ],
+  "money_verified_eur": 0,
+  "external_actions_performed": [],
+  "privacy": "static site; no forms, no analytics, no cookies, no remote runtime resources",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 4782,
+      "sha256": "be485ece8823d9cd09f20d9a182686137dc3af396acb0b3e42e0f063b2f2ea73"
+    },
+    {
+      "path": "style.css",
+      "bytes": 2311,
+      "sha256": "0dd540d7a1081e0d3d678688fecb39fffc0cf4fa5b36ad4bfae8b1b2fe74a033"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 101,
+      "sha256": "c0545184609916d8bddcfb989374b3bef9bd10cbbb46f6068a95501a5601ebf6"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 199,
+      "sha256": "1246bb4074f3a4853f0205b9a66f586c7a37cca8c27e83ab4285f2e90b5340e2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1039,
+      "sha256": "32f5af0b9c3332880d5676e38fd17299fc53d5f9888897c8fdad0f084b4ba9ac"
+    },
+    {
+      "path": "validate_index.py",
+      "bytes": 5399,
+      "sha256": "99efd50e7e15a3ae67be8384836b568c180ee84492640a3b5ac375723c5e5d4b"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 1640,
+      "sha256": "308b2056427c41778fe9e594376e81e9518be669a2707fe582763e2afb62949a"
+    }
+  ],
+  "updated_utc": "2026-08-28T00:25:38Z"
+}

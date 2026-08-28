@@ -6,6 +6,7 @@ A small static index for Blue Peak Foundry browser-based consumer rights tools.
 
 - SEPA Direct Debit Refund Draft: https://bluepeakfoundry.github.io/sepa-direct-debit-refund-draft/
 - EU Rail Delay Compensation Calculator: https://bluepeakfoundry.github.io/rail-delay-compensation/
+- B2B Refund Leakage Checklist: https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/
 
 ## Privacy and scope
 
