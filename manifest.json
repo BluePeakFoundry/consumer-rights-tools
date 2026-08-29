@@ -9,12 +9,12 @@
   ],
   "money_verified_eur": 0,
   "external_actions_performed": [],
-  "privacy": "static site; no forms, no analytics, no cookies, no remote runtime resources",
+  "privacy": "static site; no forms submitting entries, no cookies, privacy-friendly aggregate analytics for visits and non-personal events",
   "files": [
     {
       "path": "index.html",
-      "bytes": 4782,
-      "sha256": "be485ece8823d9cd09f20d9a182686137dc3af396acb0b3e42e0f063b2f2ea73"
+      "bytes": 5620,
+      "sha256": "a0fc3fa7ef369a51e401b6e02109f5fcd88322dd7a6f8475be7c18f5684adbbd"
     },
     {
       "path": "style.css",
@@ -33,19 +33,24 @@
     },
     {
       "path": "README.md",
-      "bytes": 1039,
-      "sha256": "32f5af0b9c3332880d5676e38fd17299fc53d5f9888897c8fdad0f084b4ba9ac"
+      "bytes": 1008,
+      "sha256": "f769c24e349bb17d26908c2da2c0678db1036bd27c008e187d8e78c65e6727c6"
     },
     {
       "path": "validate_index.py",
-      "bytes": 5399,
-      "sha256": "99efd50e7e15a3ae67be8384836b568c180ee84492640a3b5ac375723c5e5d4b"
+      "bytes": 5560,
+      "sha256": "2c21a155c451fcb74bafe52fedcd07db21bbc9ace568f7e878bed5ab502596cf"
     },
     {
       "path": "manifest.json",
       "bytes": 1640,
       "sha256": "308b2056427c41778fe9e594376e81e9518be669a2707fe582763e2afb62949a"
+    },
+    {
+      "path": "analytics.js",
+      "bytes": 1115,
+      "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39"
     }
   ],
-  "updated_utc": "2026-08-28T00:25:38Z"
+  "updated_utc": "2026-08-29T18:01:46Z"
 }

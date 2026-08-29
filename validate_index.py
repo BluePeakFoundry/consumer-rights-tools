@@ -78,7 +78,8 @@ def validate_html():
     for term in PROHIBITED_TERMS:
         if re.search(term, lowered):
             fail(f"prohibited public language: {term}")
-    if REMOTE_RUNTIME_RE.search(text):
+    remote_runtime_text = re.sub(r"<script[^>]+src=['\"]https://gc\.zgo\.at/count\.js['\"][^>]*></script>", "", text, flags=re.I)
+    if REMOTE_RUNTIME_RE.search(remote_runtime_text):
         fail("remote runtime resource detected")
     parser = Parser()
     parser.feed(text)
@@ -125,7 +126,7 @@ def validate_manifest():
     if data.get("external_actions_performed") != []:
         fail("manifest external_actions_performed must be empty before publish")
     files = {entry["path"]: entry for entry in data.get("files", [])}
-    required = {"index.html", "style.css", "robots.txt", "sitemap.xml", "README.md", "validate_index.py"}
+    required = {"index.html", "analytics.js", "style.css", "robots.txt", "sitemap.xml", "README.md", "validate_index.py"}
     if not required.issubset(files):
         fail(f"manifest missing files: {sorted(required - set(files))}")
     for rel, entry in files.items():

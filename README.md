@@ -10,7 +10,7 @@ A small static index for Blue Peak Foundry browser-based consumer rights tools.
 
 ## Privacy and scope
 
-This site is static. It does not collect data, submit forms, use analytics, or load runtime resources from remote domains. Links point to existing public tools and official-style explanatory pages.
+This site is static. It does not submit forms, use cookies, or collect personal data. Privacy-friendly aggregate analytics measure visits and non-personal CTA events.
 
 The tools are educational starting points, not legal advice. Users should verify current official guidance before sending requests or claims.
 
