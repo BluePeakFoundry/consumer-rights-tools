@@ -13,6 +13,15 @@ REQUIRED_LINKS = {
     "https://bluepeakfoundry.github.io/sepa-direct-debit-refund-draft/",
     "https://bluepeakfoundry.github.io/rail-delay-compensation/",
     "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
+    "https://bluepeakfoundry.github.io/ap-duplicate-payment-sql-checks/",
+    "https://bluepeakfoundry.github.io/freelance-quote-late-payment-tool/",
+}
+REQUIRED_EVENTS = {
+    "cta:index:open-sepa",
+    "cta:index:open-rail",
+    "cta:index:open-b2b",
+    "cta:index:open-ap-sql",
+    "cta:index:open-freelance",
 }
 PROHIBITED_TERMS = [
     r"\bsergi\b",
@@ -34,16 +43,20 @@ class Parser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.links = set()
+        self.events = set()
         self.canonical = None
         self.stylesheets = []
         self.json_ld = []
         self.ids = set()
         self.skip_links = []
+        self._in_json_ld = False
 
     def handle_starttag(self, tag, attrs):
         data = dict(attrs)
         if "id" in data:
             self.ids.add(data["id"])
+        if "data-analytics-event" in data:
+            self.events.add(data["data-analytics-event"])
         if tag == "a" and data.get("href"):
             self.links.add(data["href"])
             if data.get("class") == "skip-link":
@@ -52,13 +65,14 @@ class Parser(HTMLParser):
             self.canonical = data.get("href")
         if tag == "link" and data.get("rel") == "stylesheet":
             self.stylesheets.append(data.get("href"))
-        if tag == "script" and data.get("type") == "application/ld+json":
-            self._in_json_ld = True
-        else:
+        self._in_json_ld = tag == "script" and data.get("type") == "application/ld+json"
+
+    def handle_endtag(self, tag):
+        if tag == "script":
             self._in_json_ld = False
 
     def handle_data(self, data):
-        if getattr(self, "_in_json_ld", False):
+        if self._in_json_ld:
             self.json_ld.append(data)
 
 
@@ -88,6 +102,9 @@ def validate_html():
     missing = REQUIRED_LINKS - parser.links
     if missing:
         fail(f"missing crawlable tool links: {sorted(missing)}")
+    missing_events = REQUIRED_EVENTS - parser.events
+    if missing_events:
+        fail(f"missing analytics events: {sorted(missing_events)}")
     if parser.stylesheets != ["style.css"]:
         fail(f"unexpected stylesheet refs: {parser.stylesheets}")
     if "#tools" not in parser.skip_links or "tools" not in parser.ids:
@@ -125,6 +142,9 @@ def validate_manifest():
         fail("manifest money_verified_eur must be 0")
     if data.get("external_actions_performed") != []:
         fail("manifest external_actions_performed must be empty before publish")
+    included = set(data.get("included_tools", []))
+    if REQUIRED_LINKS - included:
+        fail("manifest missing included public tools")
     files = {entry["path"]: entry for entry in data.get("files", [])}
     required = {"index.html", "analytics.js", "style.css", "robots.txt", "sitemap.xml", "README.md", "validate_index.py"}
     if not required.issubset(files):
@@ -140,7 +160,7 @@ def main():
     validate_robots_sitemap()
     validate_manifest()
     data = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
-    print(f"OK consumer rights index files={len(data.get('files', []))} money_verified_eur={data['money_verified_eur']} external_actions={len(data['external_actions_performed'])}")
+    print(f"OK tools hub files={len(data.get('files', []))} links={len(data.get('included_tools', []))} money_verified_eur={data['money_verified_eur']} external_actions={len(data['external_actions_performed'])}")
 
 if __name__ == "__main__":
     main()

@@ -1,20 +1,24 @@
 {
-  "artifact": "consumer_rights_tools_index",
+  "artifact": "practical_refund_billing_tools_hub",
   "created_utc": "2026-08-27T07:30:15Z-p3",
+  "updated_utc": "2026-09-02T21:07:02Z",
   "public_url": "https://bluepeakfoundry.github.io/consumer-rights-tools/",
   "included_tools": [
     "https://bluepeakfoundry.github.io/sepa-direct-debit-refund-draft/",
     "https://bluepeakfoundry.github.io/rail-delay-compensation/",
-    "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/"
+    "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
+    "https://bluepeakfoundry.github.io/ap-duplicate-payment-sql-checks/",
+    "https://bluepeakfoundry.github.io/freelance-quote-late-payment-tool/"
   ],
   "money_verified_eur": 0,
   "external_actions_performed": [],
   "privacy": "static site; no forms submitting entries, no cookies, privacy-friendly aggregate analytics for visits and non-personal events",
+  "search_console_verification": "google-site-verification meta tag present in index.html",
   "files": [
     {
       "path": "index.html",
-      "bytes": 5715,
-      "sha256": "146515758ff484f361bf001eac9b872bf09f97438e5be358f8e076311910f08e"
+      "bytes": 7485,
+      "sha256": "843ded6e50253685485095a1d6b6c84b148d4ddd87c6758b919a6e89517e787e"
     },
     {
       "path": "style.css",
@@ -33,25 +37,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 1008,
-      "sha256": "f769c24e349bb17d26908c2da2c0678db1036bd27c008e187d8e78c65e6727c6"
+      "bytes": 1359,
+      "sha256": "2de32119972a92154f7bba21d10c4e9eb322a68eeec3670a8d42f4d63ffcb329"
     },
     {
       "path": "validate_index.py",
-      "bytes": 5560,
-      "sha256": "2c21a155c451fcb74bafe52fedcd07db21bbc9ace568f7e878bed5ab502596cf"
-    },
-    {
-      "path": "manifest.json",
-      "bytes": 1926,
-      "sha256": "308b2056427c41778fe9e594376e81e9518be669a2707fe582763e2afb62949a"
+      "bytes": 6360,
+      "sha256": "d62dc9d1090ca16a6b6be3552b881a82a7803a00d21beb6fd90d09042dbb8aad"
     },
     {
       "path": "analytics.js",
       "bytes": 1115,
       "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39"
     }
-  ],
-  "updated_utc": "2026-08-30T18:41:20Z",
-  "search_console_verification": "google-site-verification meta tag added to index.html"
+  ]
 }
