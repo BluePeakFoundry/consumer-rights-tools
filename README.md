@@ -14,6 +14,8 @@ A small static index for Blue Peak Foundry browser-based tools covering consumer
 
 This site is static. It does not submit forms, use cookies, or collect personal data. Privacy-friendly aggregate analytics measure visits and non-personal CTA events.
 
+Public feedback is handled through a GitHub Issue Form for general resource suggestions only. The form explicitly asks users not to include personal, banking, ticket, invoice, contract, or confidential information.
+
 The tools are educational starting points, not legal, accounting, or tax advice. Users should verify current official guidance before sending requests, claims, or business messages.
 
 ## Validation
@@ -28,5 +30,5 @@ python3 -m json.tool manifest.json >/dev/null
 Expected local result after building the manifest:
 
 ```text
-OK tools hub files=7 links=5 money_verified_eur=0 external_actions=0
+OK tools hub files=8 links=6 money_verified_eur=0 external_actions=1
 ```

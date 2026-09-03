@@ -15,6 +15,14 @@ REQUIRED_LINKS = {
     "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
     "https://bluepeakfoundry.github.io/ap-duplicate-payment-sql-checks/",
     "https://bluepeakfoundry.github.io/freelance-quote-late-payment-tool/",
+    "https://github.com/BluePeakFoundry/consumer-rights-tools/issues/new?template=consumer-tools-feedback.yml",
+}
+REQUIRED_TOOL_LINKS = {
+    "https://bluepeakfoundry.github.io/sepa-direct-debit-refund-draft/",
+    "https://bluepeakfoundry.github.io/rail-delay-compensation/",
+    "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
+    "https://bluepeakfoundry.github.io/ap-duplicate-payment-sql-checks/",
+    "https://bluepeakfoundry.github.io/freelance-quote-late-payment-tool/",
 }
 REQUIRED_EVENTS = {
     "cta:index:open-sepa",
@@ -22,6 +30,7 @@ REQUIRED_EVENTS = {
     "cta:index:open-b2b",
     "cta:index:open-ap-sql",
     "cta:index:open-freelance",
+    "lead:consumer-tools-feedback",
 }
 PROHIBITED_TERMS = [
     r"\bsergi\b",
@@ -119,7 +128,7 @@ def validate_html():
         fail(f"missing JSON-LD types: {types}")
     item_list = next(entry for entry in graph if entry.get("@type") == "ItemList")
     listed = {item.get("url") for item in item_list.get("itemListElement", [])}
-    if REQUIRED_LINKS - listed:
+    if REQUIRED_TOOL_LINKS - listed:
         fail("JSON-LD ItemList does not include all public tools")
 
 
@@ -140,13 +149,14 @@ def validate_manifest():
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
     if data.get("money_verified_eur") != 0:
         fail("manifest money_verified_eur must be 0")
-    if data.get("external_actions_performed") != []:
-        fail("manifest external_actions_performed must be empty before publish")
+    external_actions = data.get("external_actions_performed")
+    if not isinstance(external_actions, list) or "public_feedback_issue_form" not in external_actions:
+        fail("manifest must record public_feedback_issue_form external action")
     included = set(data.get("included_tools", []))
     if REQUIRED_LINKS - included:
         fail("manifest missing included public tools")
     files = {entry["path"]: entry for entry in data.get("files", [])}
-    required = {"index.html", "analytics.js", "style.css", "robots.txt", "sitemap.xml", "README.md", "validate_index.py"}
+    required = {"index.html", "analytics.js", "style.css", "robots.txt", "sitemap.xml", "README.md", "validate_index.py", ".github/ISSUE_TEMPLATE/consumer-tools-feedback.yml"}
     if not required.issubset(files):
         fail(f"manifest missing files: {sorted(required - set(files))}")
     for rel, entry in files.items():

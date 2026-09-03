@@ -1,0 +1,48 @@
+name: Consumer tools feedback
+about: Suggest a general resource or improvement for the practical refund and billing tools hub.
+title: "Consumer tools feedback: "
+labels: [consumer-tools-feedback]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing a general suggestion. This public form is only for non-sensitive feedback about the tools hub.
+
+        Do not include personal, banking, ticket, invoice, contract, account, health, legal, tax, or confidential information. If your situation involves a dispute or deadline, check current official guidance or a qualified adviser.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the tools hub does this relate to?
+      options:
+        - Bank payment refund drafts
+        - Passenger compensation estimates
+        - Business billing review
+        - Accounts payable SQL checks
+        - Freelance quote planning
+        - General resource suggestion
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: General suggestion
+      description: Describe the resource or improvement without personal or confidential details.
+      placeholder: "Example: Add a link to official guidance for..."
+    validations:
+      required: true
+  - type: textarea
+    id: public-source
+    attributes:
+      label: Public source or reference
+      description: Optional public URL for official guidance, documentation, or a neutral resource.
+      placeholder: "https://..."
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I did not include personal, banking, ticket, invoice, contract, account, or confidential information.
+          required: true

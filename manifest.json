@@ -1,29 +1,32 @@
 {
   "artifact": "practical_refund_billing_tools_hub",
   "created_utc": "2026-08-27T07:30:15Z-p3",
-  "updated_utc": "2026-09-02T21:07:02Z",
+  "updated_utc": "2026-09-03T09:32:49Z",
   "public_url": "https://bluepeakfoundry.github.io/consumer-rights-tools/",
   "included_tools": [
     "https://bluepeakfoundry.github.io/sepa-direct-debit-refund-draft/",
     "https://bluepeakfoundry.github.io/rail-delay-compensation/",
     "https://bluepeakfoundry.github.io/b2b-refund-leakage-checklist/",
     "https://bluepeakfoundry.github.io/ap-duplicate-payment-sql-checks/",
-    "https://bluepeakfoundry.github.io/freelance-quote-late-payment-tool/"
+    "https://bluepeakfoundry.github.io/freelance-quote-late-payment-tool/",
+    "https://github.com/BluePeakFoundry/consumer-rights-tools/issues/new?template=consumer-tools-feedback.yml"
   ],
   "money_verified_eur": 0,
-  "external_actions_performed": [],
-  "privacy": "static site; no forms submitting entries, no cookies, privacy-friendly aggregate analytics for visits and non-personal events",
+  "external_actions_performed": [
+    "public_feedback_issue_form"
+  ],
+  "privacy": "static site; no forms submitting entries; GitHub public feedback form for general non-sensitive suggestions only; no cookies; privacy-friendly aggregate analytics for visits and non-personal events",
   "search_console_verification": "google-site-verification meta tag present in index.html",
   "files": [
     {
       "path": "index.html",
-      "bytes": 7485,
-      "sha256": "843ded6e50253685485095a1d6b6c84b148d4ddd87c6758b919a6e89517e787e"
+      "bytes": 7940,
+      "sha256": "6c29900c7ee1951c8fc97a14dc6cad2ca091e2d06bbbe2188aae1bc055ee77c1"
     },
     {
       "path": "style.css",
-      "bytes": 2311,
-      "sha256": "0dd540d7a1081e0d3d678688fecb39fffc0cf4fa5b36ad4bfae8b1b2fe74a033"
+      "bytes": 2531,
+      "sha256": "e7b226305f1baa602496b564d18685a02114cd00c0f743c2e77bca1fc9220beb"
     },
     {
       "path": "robots.txt",
@@ -37,18 +40,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 1359,
-      "sha256": "2de32119972a92154f7bba21d10c4e9eb322a68eeec3670a8d42f4d63ffcb329"
+      "bytes": 1575,
+      "sha256": "c3aadf580f013597f25b9b8e226d3598888ffcec4856724188147f29cecc84ba"
     },
     {
       "path": "validate_index.py",
-      "bytes": 6360,
-      "sha256": "d62dc9d1090ca16a6b6be3552b881a82a7803a00d21beb6fd90d09042dbb8aad"
+      "bytes": 7064,
+      "sha256": "cdbf7ed26490203429e827c7d5d2d7d9fb067b3edab84622833a43cd837bc6f6"
     },
     {
       "path": "analytics.js",
       "bytes": 1115,
       "sha256": "5d70b146cf7cccb7fe0060ff70c72b6a80429efff2b8d7dd135af3c1c3dcfc39"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/consumer-tools-feedback.yml",
+      "bytes": 1817,
+      "sha256": "5d837bcabdc185a0b1605ee1afc5fa08826b9bd0d01cf4b9914b9b84c0002f18"
     }
   ]
 }

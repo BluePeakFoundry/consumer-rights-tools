@@ -60,6 +60,9 @@ h3 { margin: 0 0 .4rem; font-size: 1.4rem; line-height: 1.2; }
   white-space: nowrap;
 }
 .button:hover { background: var(--accent-dark); }
+.button.secondary { background: #eef3ff; color: var(--accent-dark); border: 1px solid #b9c8f5; }
+.button.secondary:hover { background: #dde8ff; }
+.small-note { color: var(--muted); font-size: .95rem; margin-bottom: 0; }
 ul { margin: 0; padding-left: 1.2rem; }
 footer { padding: 32px 0 56px; color: var(--muted); }
 @media (max-width: 720px) {
